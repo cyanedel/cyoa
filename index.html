@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CYOA: Create Your Own Adventure</title>
+	<link href="src/redbook.png" type="image/x-icon" rel="shortcut icon">
+	
+	<meta name="description" content="CYOA: Create Your Own Adventure!">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+	<!-- facebook metatags -->
+	<meta property="og:title" content="Create Your Own Adventure." />
+	<meta property="og:image" content="" />
+	<meta property="og:site_name" content="cyanedel.com" />
+	<meta property="og:description" content="Halaman kurang kerjaan untuk mempelajari hal baru." />
+	<!-- end facebook metatags -->
+	
+	<!-- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:600,400,300">
+	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Oswald'>
+	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Anton'>
+	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400'> -->
+	
+	<link rel="stylesheet" type="text/css" href="lib/main.css" media="all">
+	<link rel="stylesheet" type="text/css" href="lib/preset.css" media="all">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css" media="all">
+	<!-- <style> html, body{height:100%;} </style> -->
+
+	<script src="lib/jquery-3.3.1.min.js"></script>
+	<script src="lib/vue.min.js"></script>
+	<script>	
+	$(function() {
+		$.getJSON('src/1.json',function(data){
+            // console.log('success');
+            console.log(data)
+            // $.each(data.employees,function(i,emp){
+            //     console.log(data)
+            // });
+        }).error(function(){
+            // console.log('error');
+        });
+
+		// import json from 'src/1.json';
+		// json.forEach(x => { console.log(x.firstname, x.lastname); });
+
+
+
+		var story1 = new Vue({
+			el: "#story1",
+			data: {
+				steps  : 0,
+				head_  : "mainwpn",
+				head   : "Senjata Utama",
+				reads  : "Kamu diberikan misi untuk membunuh vampir jahat. Api dan perak adalah 2 elemen yang diketahui dapat membunuh mereka. Namun vampir tidak akan diam ditempat menunggu untuk dibunuh. PIlihlah senjata yang paling kamu kamu kuasai atau yang menurutmu paling mudah digunakan untuk menjalankan misi ini!",
+				cho    : [
+							{short: "Dual Pistol", long: "Pistol berakurasi tinggi dengan peluru perak. Perlu waktu sedikit lama untuk mengisi amunisi"},
+							{short: "Automatic Crossbow", long: "Daya serang dan akurasi tidak terlalu baik. hal terburuk dari senjata ini adalah waktu yang dihabiskan untuk mengisi ulang. Dapat menampung banyak panah."},
+							{short: "Silver Halberd", long: "Senjata jarak dekat. Sangat berbahaya namun cukup efektif dalam membunuh vampir."},
+							{short: "Fire Lance", long: "senjata yang sedang dikembangkan dan masih dalam tahap percobaan. Api yang disemburkan dapat bertahan beberapa menit. Sangat berguna untuk mengepung musuh."}
+						],
+				ucho: []
+			},
+			methods: {
+				save: function(x){
+					var obj = {};
+					obj[this.head_] = x;
+					var strObj = JSON.stringify(obj);
+
+					this.ucho.push(strObj);
+					console.log(this.ucho);
+					this.advance();
+				},
+				advance:function(){
+					this.steps += 1;
+					this.stories(this.steps);
+				},
+				stories:function(x){
+					switch(x){
+						case 1:
+							this.head_ = "subwpn";
+							this.head  = "Senjata Cadangan";
+							this.reads = "Kehilangan senjata atau kehabisan amunisi tentu sangat berbahaya saat menjalankan misi. Maka dari itu, Anda pasti membutuhkan senjata cadangan sebagai asuransi untuk menyelesaikan misi ini.";
+							this.cho   =  [
+											{short: "Silver Blade", long: "Senjata jarak dekat yang memastikan vampir terbunuh dengan menancapkannya pada jantung vampir."},
+											{short: "Silver Mace", long: "Senajta tumpul yang mampu menyerang dengan baik baik pada musuh berperisai maupun tidak."},
+											{short: "Silver Net", long: "Untuk memerangkap musuh"},
+											{short: "Fire Traps", long: "ada deh"},
+											{short: "Grenades", long: "bom"}
+										];
+						break;
+						case 2:
+							this.reads = "";
+						break;
+					}
+				}
+			}
+		});
+	});
+	</script>
+</head>
+<body class="opensans ac">
+	<div id="titleBlock" class="backLGrey ac font48" style="font-weight: bold;"><<== CYOA: Witch Hunter ==>></div>
+	<hr />
+	<span id="story1" class="content">
+		<div style="margin-bottom: 15px;">{{reads}}</div>
+		<div class="card backLGrey" v-for="opt in cho" v-bind:value="opt.short" @click="save(opt.short)">
+			<div>{{opt.short}}</div>
+			<div>{{opt.long}}</div>
+		</div>
+	</span>
+	<div style="height: 30px"></div>
+	<div class="ac">Inspired from: [https://funnyjunk.com/channel/cyoa/Witch+hunter+cyoa/ymvvLlz/]</div>
+</body>
+</html>

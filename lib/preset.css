@@ -1,0 +1,84 @@
+html{}
+/*e9eaed*/
+
+body{
+margin:0px;
+font-size: 12px;
+/*overflow-y:scroll;*/
+}
+
+*{
+	box-sizing: border-box;
+}
+
+/*font*/
+.opensans{font-family: 'Open Sans', sans-serif;}
+.oswald{font-family: 'Oswald', sans-serif;}
+.anton{font-family: 'Anton', sans-serif;}
+.robotoslab{font-family: 'Roboto Slab', serif;}
+
+/*font size*/
+.font10{font-size:10px;}
+.font12{font-size:12px;}
+.font13{font-size:13px;}
+.font14{font-size:14px;}
+.font18{font-size:18px;}
+.font20{font-size:20px;}
+.font24{font-size:24px;}
+.font30{font-size:30px;}
+.font36{font-size:36px;}
+.font48{font-size:48px;}
+
+/*misc*/
+a, img{border:none;}
+p {margin:0px;}
+a {text-decoration:none; color:inherit;}
+a:hover{text-decoration:none; color:inherit;}
+table{border-collapse:collapse;}
+tr.padded{padding-top:25px;}
+.fr{float:right;}
+.fl{float:left;}
+.ac{text-align: center;}
+.ae{text-align: right;}
+.width70{width:70px;}
+.stripe_table tbody tr:nth-child(odd) {
+   background-color: #fff3ed;
+}
+
+.paddingLeftRight{padding:0px 20px;}
+.paddingAllAround{padding:35px 20px;}
+.displayInlineBlockTop{display: inline-block;vertical-align: top;}
+
+/*color pallete*/
+.backBlue{background-color: #00aeef}
+.backLGrey{background-color:#f8f8f8;}
+.backRed{background-color:#E53935;} /*main red*/
+.backRedRadGrad{
+	background: -webkit-radial-gradient(#E53935, #c12421, #a61d1a);
+	background: -o-radial-gradient(#E53935, #c12421, #a61d1a);
+	background: -moz-radial-gradient(#E53935, #c12421, #a61d1a);
+	background: radial-gradient(#E53935, #c12421, #a61d1a);
+}
+.b3{background-color:#ffffff;} /*white*/
+.b4{background-color:#333;} /*black*/
+.b5{background-color:#D50F25;} /*red*/
+.b6{background-color:#878787;} /*darkgrey*/
+
+.t1{color:#E53935;}
+.t2{color:#f8f8f8;}
+.t3{color:#ffffff;}
+.t4{color:#333;}
+.t5{color:#D50F25;}
+.t6{color:#878787;}
+
+.tr{display:table-row;}
+.tc{display:table-cell;}
+.tableParent{display:table;}
+.tableCell{display:table-cell; vertical-align:middle; text-align:center;}
+.content{
+	display: block;
+	padding: 0px 20px;
+	width: 100%;
+	max-width: 800px;
+	margin: auto;
+}
