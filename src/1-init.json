@@ -1,0 +1,37 @@
+[
+	{
+		"code"      : "mainwpn",
+		"title"     : "Senjata Utama",
+		"story"     : "Kamu diberikan misi untuk membunuh vampir jahat. Api dan perak adalah 2 elemen yang diketahui dapat membunuh mereka. Namun vampir tidak akan diam ditempat menunggu untuk dibunuh. PIlihlah senjata yang paling kamu kamu kuasai atau yang menurutmu paling mudah digunakan untuk menjalankan misi ini!",
+		"options"   : [
+						{"short": "Dual Pistol", "long": "Pistol berakurasi tinggi dengan peluru perak. Perlu waktu sedikit lama untuk mengisi amunisi"},
+						{"short": "Automatic Crossbow", "long": "Daya serang dan akurasi tidak terlalu baik. hal terburuk dari senjata ini adalah waktu yang dihabiskan untuk mengisi ulang. Dapat menampung banyak panah."},
+						{"short": "Silver Halberd", "long": "Senjata jarak dekat. Sangat berbahaya namun cukup efektif dalam membunuh vampir."},
+						{"short": "Fire Lance", "long": "senjata yang sedang dikembangkan dan masih dalam tahap percobaan. Api yang disemburkan dapat bertahan beberapa menit. Sangat berguna untuk mengepung musuh."}
+					]
+	},
+    {
+		"code"      : "subwpn",
+		"title"     : "Senjata Cadangan",
+		"story"     : "Kehilangan senjata atau kehabisan amunisi tentu sangat berbahaya saat menjalankan misi. Maka dari itu, Anda pasti membutuhkan senjata cadangan sebagai asuransi untuk menyelesaikan misi ini.",
+		"options"   : [
+						{"short": "Silver Blade", "long": "Senjata jarak dekat yang memastikan vampir terbunuh dengan menancapkannya pada jantung vampir."},
+						{"short": "Silver Mace", "long": "Senajta tumpul yang mampu menyerang dengan baik baik pada musuh berperisai maupun tidak."},
+						{"short": "Silver Net", "long": "Untuk memerangkap musuh"},
+						{"short": "Fire Traps", "long": "ada deh"},
+						{"short": "Grenades", "long": "bom"}
+					]
+	},
+	{
+		"code"      : "subwpn2",
+		"title"     : "Senjata Cadangan2",
+		"story"     : "Kehilangan senjata atau kehabisan amunisi tentu sangat berbahaya saat menjalankan misi. Maka dari itu, Anda pasti membutuhkan senjata cadangan sebagai asuransi untuk menyelesaikan misi ini.",
+		"options"   : [
+						{"short": "Silver Blade", "long": "Senjata jarak dekat yang memastikan vampir terbunuh dengan menancapkannya pada jantung vampir."},
+						{"short": "Silver Mace", "long": "Senajta tumpul yang mampu menyerang dengan baik baik pada musuh berperisai maupun tidak."},
+						{"short": "Silver Net", "long": "Untuk memerangkap musuh"},
+						{"short": "Fire Traps", "long": "ada deh"},
+						{"short": "Grenades", "long": "bom"}
+					]
+	}
+]
