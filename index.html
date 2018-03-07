@@ -15,10 +15,8 @@
 	<meta property="og:description" content="Halaman kurang kerjaan untuk mempelajari hal baru." />
 	<!-- end facebook metatags -->
 	
-	<!-- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:600,400,300">
-	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Oswald'>
-	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Anton'>
-	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400'> -->
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:600,400,300">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald">
 	
 	<link rel="stylesheet" type="text/css" href="lib/main.css" media="all">
 	<link rel="stylesheet" type="text/css" href="lib/preset.css" media="all">
@@ -27,66 +25,22 @@
 
 	<script src="lib/jquery-3.3.1.min.js"></script>
 	<script src="lib/vue.min.js"></script>
-	<script>
-
-	$(function() {
-		var jdata;
-		$.getJSON('src/1-init.json',function(data){
-			jdata = data;
-			console.log(jdata);
-
-			var story1 = new Vue({
-				el: "#story1",
-				data: {
-					maxstep: jdata.length - 1,
-					steps  : 0,
-					head_  : jdata[0].code,
-					head   : jdata[0].title,
-					reads  : jdata[0].story,
-					cho    : jdata[0].options,
-					ucho   : []
-				},
-				methods: {
-					save: function(x){
-						var obj = {};
-						obj[this.head_] = x;
-						var strObj = JSON.stringify(obj);
-
-						this.ucho.push(strObj);
-						console.log(this.ucho);
-						this.advance();
-					},
-					advance:function(){
-						this.steps += 1;
-						this.stories(this.steps);
-					},
-					stories:function(x){
-						if(x <= this.maxstep){
-							this.head_ = jdata[this.steps].code;
-							this.head  = jdata[this.steps].title;
-							this.reads = jdata[this.steps].story;
-							this.cho   = jdata[this.steps].options;
-						}else{
-							console.log('hide here');
-						}
-					}
-				}
-			});
-		});
-	});
-	</script>
+	<script src="lib/main.js"></script>
 </head>
 <body class="opensans ac">
-	<div id="titleBlock" class="backLGrey ac font48" style="font-weight: bold; opacity: 0;"><<== CYOA: Vampire Hunter ==>></div>
+	<div id="titleBlock" class="ac font48 oswald" style="font-weight: bold;"><<|| CYOA: Vampire Hunter ||>></div>
 	<hr />
 	<span id="story1" class="content">
-		<div style="margin-bottom: 15px;">{{reads}}</div>
-		<div class="card backLGrey" v-for="opt in cho" v-bind:value="opt.short" @click="save(opt.short)">
+		<div class="font36" style="margin-bottom: 15px">{{title}}</div>
+		<div style="margin-bottom: 15px;" v-html="reads"></div>
+		<div class="card backLGrey" v-if="showoptions" v-for="opt in options" v-bind:value="opt.short" @click="save(opt.short)">
 			<div>{{opt.short}}</div>
-			<div>{{opt.long}}</div>
+			<div v-html="opt.long"></div>
+		</div>
+		<div v-else>
+			<div style="height: 30px"></div>
+			<div class="ac">Inspired by: [https://funnyjunk.com/channel/cyoa/Witch+hunter+cyoa/ymvvLlz/]</div>
 		</div>
 	</span>
-	<div style="height: 30px"></div>
-	<div class="ac">Inspired by: [https://funnyjunk.com/channel/cyoa/Witch+hunter+cyoa/ymvvLlz/]</div>
 </body>
 </html>
