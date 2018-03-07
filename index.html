@@ -38,6 +38,7 @@
 			<div v-html="opt.long"></div>
 		</div>
 		<div v-else>
+			<span class="" v-for="opt in selectedOption" style="display: block;">{{opt.value}}</span>
 			<div style="height: 30px"></div>
 			<div class="ac">Inspired by: [https://funnyjunk.com/channel/cyoa/Witch+hunter+cyoa/ymvvLlz/]</div>
 		</div>

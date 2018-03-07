@@ -34,14 +34,14 @@
 		"title"     : {"key":"partner", "disp":"Partner"},
 		"story"     : "Saat Kamu Barusaja menerima segala kebutuhanmu untuk menjalankan misi, tiba-tiba seseorang menyapamu dan memberitahumu bahwa ia bersedia membantu misimu. Siapakah dia?",
 		"options"   : [
-						{"short": "Assassin", "long": ""},
-						{"short": "Knight", "long": ""},
-						{"short": "Mage", "long": ""},
-						{"short": "Gunner", "long": ""},
-						{"short": "Fencer", "long": ""},
-						{"short": "Priest", "long": ""},
-						{"short": "Sniper", "long": ""},
-						{"short": "Angel", "long": ""}
+						{"short": "Assassin (F)", "long": "Ahli bela diri jarak dekat. Kecepatan dan kelincahan merupakan hal yang sangat Ia banggakan. Alasan Ia membantumu? Uang."},
+						{"short": "Knight (M)", "long": "Ksatria tangguh yang dikirim dari kerajaan. Ia mendapatkan kabar mengenai vampir dan datang untuk membantu."},
+						{"short": "Mechanic (F)", "long": "Ahli mesin dari kota. Memiliki banyak alat misterius yang cara kerjanya tidak kamu ketahui."},
+						{"short": "Pharmacist (M)", "long": "Ahli obat yang kebetulan sedang menjelajahi area sekitar misi dijalankan. Ia tertarik untuk membantu siapa saja yang mengalami masalah."},
+						{"short": "Mage (M)", "long": "Penyihir dalam masa latihan. Sedang berpetualang untuk mengembangkan ilmu sihirnya."},
+						{"short": "Priest (F)", "long": "Gereja terdekat juga mendapatkan informasi mengenai vampir yang menggangu warga tentu tidak akan tinggal diam."},
+						{"short": "Sniper (M)", "long": "Kemampuan membidik musuh dari jauh yang bergerak sangat sekalipun tidak perlu dipertanyakan. Namun tidak terlalu ahli dalam pertarungan jarak dekat."},
+						{"short": "Angel (N/A)", "long": "Malaikat yang mengasihani manusia dan turun untuk membantu. Namun ia tidak diizinkan untuk membunuh vampir dengan tangannya sendiri."}
 					]
 	},
 	{
