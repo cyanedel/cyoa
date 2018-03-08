@@ -39,7 +39,7 @@
 		<button v-for="list in gamelist" :class=list.color @click=loadStory(list.storyId)>{{list.display}}</button>
 	</section>
 	<section id="story-container" class="content" v-show="visibility">
-		<div class="title-block oswald"><<|| Vampire Hunter ||>></div>
+		<div class="title-block oswald"><<|| {{storyTitle}} ||>></div>
 		<hr />
 		<div class="font36" style="margin-bottom: 15px">{{title}}</div>
 		<div style="margin-bottom: 15px;" v-html="reads"></div>
@@ -51,6 +51,15 @@
 			<span class="" v-for="opt in selectedOption" style="display: block;">{{opt.value}}</span>
 			<div style="height: 30px"></div>
 			<div class="ac">Inspired by: [https://funnyjunk.com/channel/cyoa/Witch+hunter+cyoa/ymvvLlz/]</div>
+		</div>
+	</section>
+	<section id="story-container-branch" class="content" v-show="visibility">
+		<div class="title-block oswald"><<|| {{storyTitle}} ||>></div>
+		<hr />
+		<div class="font36" style="margin-bottom: 15px; display: none;">{{title}}</div>
+		<div style="margin-bottom: 15px; line-height: 2em; text-align: left;" v-html="reads"></div>
+		<div class="branch-card backLGrey" v-for="opt in options" @click="advance(opt.jumpto)">
+			<div v-html="opt.text"></div>
 		</div>
 	</section>
 </body>
