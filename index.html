@@ -6,21 +6,22 @@
 	
 	<meta name="description" content="CYOA: Create Your Own Adventure!">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<meta name="keywords" content="adventure, create, custom, cyoa, fantasy, game, story">
+	<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
 
 	<!-- facebook metatags -->
 	<meta property="og:title" content="Create Your Own Adventure." />
 	<meta property="og:image" content="" />
-	<meta property="og:site_name" content="cyanedel.com" />
+	<meta property="og:site_name" content="cyanedel.com/cyoa" />
 	<meta property="og:description" content="Halaman kurang kerjaan untuk mempelajari hal baru." />
 	<!-- end facebook metatags -->
 	
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:600,400,300">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald">
 	
-	<link rel="stylesheet" type="text/css" href="lib/main.css" media="all">
-	<link rel="stylesheet" type="text/css" href="lib/preset.css" media="all">
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css" media="all">
+	<link rel="stylesheet" type="text/css" href="lib/preset.css" media="all">
+	<link rel="stylesheet" type="text/css" href="lib/main.css" media="all">
 	<!-- <style> html, body{height:100%;} </style> -->
 
 	<script src="lib/jquery-3.3.1.min.js"></script>
@@ -28,9 +29,18 @@
 	<script src="lib/main.js"></script>
 </head>
 <body class="opensans ac">
-	<div id="titleBlock" class="ac font48 oswald" style="font-weight: bold;"><<|| CYOA: Vampire Hunter ||>></div>
-	<hr />
-	<span id="story1" class="content">
+	<section id="gametitles" class="content" v-show="visibility">
+		<div class="title-block oswald">Create Your Own Adventure!</div>
+		<hr />
+		<p>Here are some titles I have right now.</p>
+		<div id="game-types">
+			<div v-for="mark in types" class="type-container"><div :class="'type-color-label '+mark.color"></div><span>{{mark.display}}</span></div>
+		</div>
+		<button v-for="list in gamelist" :class=list.color @click=loadStory(list.storyId)>{{list.display}}</button>
+	</section>
+	<section id="story-container" class="content" v-show="visibility">
+		<div class="title-block oswald"><<|| Vampire Hunter ||>></div>
+		<hr />
 		<div class="font36" style="margin-bottom: 15px">{{title}}</div>
 		<div style="margin-bottom: 15px;" v-html="reads"></div>
 		<div class="card backLGrey" v-if="showoptions" v-for="opt in options" v-bind:value="opt.short" @click="save(opt.short)">
@@ -42,6 +52,6 @@
 			<div style="height: 30px"></div>
 			<div class="ac">Inspired by: [https://funnyjunk.com/channel/cyoa/Witch+hunter+cyoa/ymvvLlz/]</div>
 		</div>
-	</span>
+	</section>
 </body>
 </html>

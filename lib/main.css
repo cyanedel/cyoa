@@ -4,6 +4,66 @@
 @media (min-width: 401px){
 	.mini-mode{display: none;}
 }
+.title-block{
+	font-size:48px;
+	font-weight: bold;
+	padding: 20px 0px 10px;
+}
+#gametitles > button{
+	border-radius: 3px;
+	margin: 10px;
+	opacity: .7;
+	padding: 7px 10px;
+	transitoin: .3s;
+}
+#gametitles > button:hover{ opacity: 1; }
+div.blue,
+button.blue{
+	background-color: #2196F3;
+	border: 1px solid #1E88E5;
+	color: #ffffff;
+}
+div.green,
+button.green{
+	background-color: #8BC34A;
+	border: 1px solid #7CB342;
+}
+div.purple,
+button.purple{
+	background-color: #AB47BC;
+	border: 1px solid #9C27B0;
+	color: #ffffff;
+}
+div.red,
+button.red{
+	background-color: #EC407A;
+	border: 1px solid #E91E63;
+	color: #ffffff;
+}
+div.yellow,
+button.yellow{
+	background-color: #FFCA28;
+	border: 1px solid #FFC107;
+}
+
+.type-container{
+	display: inline-block;
+	margin: 5px 10px 15px;
+}
+
+.type-container span{
+	margin-left: 5px;
+	vertical-align: middle;
+}
+
+.type-color-label{
+	border-radius: 50%;
+	border: 1px solid;
+	display: inline-block;
+	height: 13px;
+	width: 13px;
+	vertical-align: middle;
+}
 
 .card{
 	border-radius: 3px;
